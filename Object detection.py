@@ -42,7 +42,7 @@ outs = net.forward(output_layers)
 # In[ ]:
 
 
-# Showing informations on the screen
+# To show the image info
 class_ids = []
 confidences = []
 boxes = []
