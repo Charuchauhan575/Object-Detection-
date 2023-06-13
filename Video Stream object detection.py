@@ -51,47 +51,6 @@ model.setInputMean((127.5,127.5,127.5))
 model.setInputSwapRB(True)
 
 
-# In[17]:
-
-
-# read an image
-img = cv2.imread('dog.jpg')
-
-
-# In[18]:
-
-
-plt.imshow(img)
-
-
-# In[19]:
-
-
-ClassIndex, confidence, bbox = model.detect(img,confThreshold=0.5)
-
-
-# In[20]:
-
-
-print(ClassIndex)
-
-
-# In[21]:
-
-
-font_scale = 3
-font = cv2.FONT_HERSHEY_PLAIN 
-for ClassInd, conf, boxes in zip(ClassIndex.flatten(), confidence.flatten(), bbox):
-    cv2.rectangle(img, boxes,(255, 0, 0), 2)
-    cv2.putText(img, classLabels[ClassInd-1], (boxes[0]+10,boxes[1]+40), font, fontScale=font_scale, color=(0, 255, 0), thickness = 3)
-
-
-# In[22]:
-
-
-plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-
-
 # In[23]:
 
 
